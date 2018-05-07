@@ -17,6 +17,9 @@
     	display: flex;
     	align-items: center;
     	justify-content: center;
+    	background: url('img.JPG');
+    	background-size: cover;
+    	background-position: center center;
 	}
 	</style>
 
@@ -62,6 +65,7 @@
 	}
 
 	.style1{
+		/*display: block;*/
 		position:absolute;
 		z-index: 1;
 		-webkit-animation-name: fade2;
@@ -72,8 +76,9 @@
 	}
 
 	.style2{
+		/*display: block;*/
 		position:absolute;
-		z-index: 1;
+		z-index: 2;
 		opacity: 0;
 		-webkit-animation-name: fade1;
 		-webkit-animation-duration: 14s;
@@ -84,7 +89,7 @@
 	</style>
 </head>
 <body>
-	<div class="center" style="z-index: 1">
+	<div class="center">
 		<h1 class="style1">Chi Yung der Personal Website</h1>
 		<h1 class="style2">這裡沒有任何東西</h1>
 	</div>
