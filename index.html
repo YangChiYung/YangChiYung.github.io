@@ -26,22 +26,22 @@
 	<style type="text/css">
 	/* Safari 4.0 - 8.0 */
 	@-webkit-keyframes fade1 {
-	    0%   {opacity: 0;}
-	    25%  {opacity: 0;}
-	    45%  {opacity: 1;}
-	    65%  {opacity: 1;}
-	    85%  {opacity: 0;}
-	    100%  {opacity: 0;}
+	    0%   {opacity: 0; visibility: hidden;}
+	    25%  {opacity: 0; visibility: hidden;}
+	    45%  {opacity: 1; visibility: visible;}
+	    65%  {opacity: 1; visibility: visible;}
+	    85%  {opacity: 0; visibility: hidden;}
+	    100%  {opacity: 0; visibility: hidden;}
 	}
 	
 	/* Standard syntax */
 	@keyframes fade1 {
-	    0%   {opacity: 0;}
-	    25%  {opacity: 0;}
-	    45%  {opacity: 1;}
-	    65%  {opacity: 1;}
-	    85%  {opacity: 0;}
-	    100%  {opacity: 0;}
+	    0%   {opacity: 0; visibility: hidden;}
+	    25%  {opacity: 0; visibility: hidden;}
+	    45%  {opacity: 1; visibility: visible;}
+	    65%  {opacity: 1; visibility: visible;}
+	    85%  {opacity: 0; visibility: hidden;}
+	    100%  {opacity: 0; visibility: hidden;}
 	}
 
 	/* Safari 4.0 - 8.0 */
@@ -91,9 +91,9 @@
 <body>
 	<div class="center">
 		<h1 class="style1">Chi Yung der Personal Website</h1>
-		<h1 class="style2">這裡沒有任何東西</h1>
+		<h1 class="style2" onclick="location.href='https://yangchiyung.github.io/SubnetCalculator'">這裡沒有任何東西</h1>
 	</div>
 
-	<!-- <img src="img.PNG"> -->
+	<!-- 看屁哦 -->
 </body>
 </html>
