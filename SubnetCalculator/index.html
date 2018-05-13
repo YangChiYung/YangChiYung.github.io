@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>子網路遮罩計算機</title>
+
+	<style type="text/css">
+	html, body{
+		height: 100%;
+		min-height: 100%;
+  		margin: 0;
+  		padding: 0;
+	}
+
+	.center {
+		height: 100%;
+    	width: 100%;
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+	}
+	</style>
+</head>
+<body>
+	<div class="center">
+		<div style="text-align: center;">
+			<span>請輸入子網路遮罩數字(8~32):</span>
+			<input id="inputNum" type="number" min="8" max="32" onchange="calculation()" style="width: 100px; margin-left : 8px;">
+			<br>
+			<h1><output id="result"></output></h1>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function calculation()
+		{
+			var inputNum = document.getElementById("inputNum");
+
+			if (inputNum.value > 32) 
+			{
+				inputNum.value = 32;
+			}
+			else if(inputNum.value < 8)
+			{
+				inputNum.value = 8;
+			}
+
+			var result = Math.pow(2, (32 - inputNum.value));
+
+			if (inputNum.value >= 24) 
+			{
+				document.getElementById("result").innerHTML = "255.255.255." + (256 - result);
+			}
+			else if(inputNum.value >= 16)
+			{
+				document.getElementById("result").innerHTML = "255.255." + (256 - (result / 256)) + ".0";
+			}
+			else if(inputNum.value >= 8)
+			{
+				document.getElementById("result").innerHTML = "255." + (256 - (result / 65536)) + ".0.0";
+			}
+
+		}
+	</script>
+</body>
+</html>
