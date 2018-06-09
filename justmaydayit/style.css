@@ -122,5 +122,8 @@ li {
 }
 
 #播放器-歌詞 {
-
+  padding: 20px;
+  box-sizing: content-box;
+  overflow: auto;
+  height: auto;
 }
