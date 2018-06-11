@@ -21,9 +21,9 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function onYouTubeIframeAPIReady() {
-	player = new YT.Player('播放器-影片', {
-		  height: '390',
-		  width: '640',
+	player = new YT.Player('player-video', {
+		  height: '100%',
+		  width: '100%',
 		  videoId: '9HikwUaEpik',
 		  events: {
 			'onReady': onPlayerReady
@@ -33,12 +33,12 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
     // event.target.playVideo();
-    document.getElementById("播放器-歌詞").innerHTML = lyrics[0];
+    document.getElementById("player-lyrics-content").innerHTML = lyrics[0];
 }
 
 function onChangeYoutube(videoId, index)
 {
 	player.loadVideoById(videoId);
 
-	document.getElementById("播放器-歌詞").innerHTML = lyrics[index];
+	document.getElementById("player-lyrics-content").innerHTML = lyrics[index];
 }
