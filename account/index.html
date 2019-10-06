@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>專屬匯款帳號查詢</title>
+  </head>
+  <body>
+    <div style="display: flex;">
+      <input type="text" name="id" id="id" style="width:100%; margin-right:10px;" value="">
+      <button type="button" name="button" style="width:100px;" onclick="search()">確定</button>
+    </div>
+
+    <br>
+    <h1 id="result"></h1>
+  </body>
+
+  <script type="text/javascript">
+    function search()
+    {
+      var id = document.getElementById("id").value;
+
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", "./account.txt", true);
+      rawFile.onreadystatechange = function ()
+      {
+          if(rawFile.readyState === 4)
+          {
+              if(rawFile.status === 200 || rawFile.status == 0)
+              {
+                  var allText = rawFile.responseText;
+                  var splitLine = allText.split("\n");
+                  for (var i = 0; i < splitLine.length; i++)
+                  {
+                    var splitComma = splitLine[i].split(",");
+
+                    if (splitComma[0] == id)
+                    {
+                      document.getElementById("result").textContent = "帳號：" + splitComma[1];
+                      break;
+                    }
+                  }
+              }
+          }
+      }
+      rawFile.send(null);
+    }
+
+  </script>
+</html>
