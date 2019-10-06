@@ -7,15 +7,22 @@
   </head>
   <body>
     <div style="display: flex;">
-      <input type="text" name="id" id="id" style="width:100%; margin-right:10px;" value="">
-      <button type="button" name="button" style="width:100px;" onclick="search()">確定</button>
+      <input type="text" name="id" id="id" style="width:100%; margin-right:10px;" value="" onkeyup="listenEnter(event)">
+      <!-- <button type="button" name="button" style="width:100px;" onclick="search()">確定</button> -->
     </div>
-
-    <br>
+    <strong>可查詢的ID為20000-204995</strong>
     <h1 id="result"></h1>
   </body>
 
   <script type="text/javascript">
+  function listenEnter(e)
+  {
+    if (13 == e.keyCode)
+    {
+      search();
+    }
+  }
+
     function search()
     {
       var id = document.getElementById("id").value;
